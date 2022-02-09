@@ -1,3 +1,5 @@
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
 public class Main {
@@ -7,7 +9,14 @@ public class Main {
 
         ListaDeCards lista = new ListaDeCards();
 
+        //cadastroDeCard(lista, sc);
+        popularCards(lista);
+        listagemDeCards(lista);
 
+        sc.close();
+    }
+
+    public static void cadastroDeCard(ListaDeCards lista, Scanner sc){
         int caso = 1;
         while(caso!=0){
 
@@ -26,17 +35,33 @@ public class Main {
             caso = sc.nextInt();
             sc.nextLine();
         }
-
-        listagemDeCards(lista);
-
-
-        sc.close();
     }
 
     public static void listagemDeCards(ListaDeCards lista){
         for (Card card: lista.getLista()) {
             System.out.println(card.toString());
         }
+    }
+
+    public static void popularCards(ListaDeCards lista){
+        LocalDate data = LocalDate.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+
+
+        Card card1 = new Card("Tarefa 1", "descricao", 1, false, data.format(formatter));
+        Card card2 = new Card("Tarefa 2", "descricao", 1, false, data.format(formatter));
+        Card card3 = new Card("Tarefa 3", "descricao", 1, false, data.format(formatter));
+        Card card4 = new Card("Tarefa 4", "descricao", 1, false, data.format(formatter));
+        Card card5 = new Card("Tarefa 5", "descricao", 1, false, data.format(formatter));
+        Card card6 = new Card("Tarefa 6", "descricao", 1, false, data.format(formatter));
+
+        lista.getLista().add(card1);
+        lista.getLista().add(card2);
+        lista.getLista().add(card3);
+        lista.getLista().add(card4);
+        lista.getLista().add(card5);
+        lista.getLista().add(card6);
+
     }
 
 

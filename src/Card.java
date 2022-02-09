@@ -6,9 +6,9 @@ public class Card {
     private String descricao;
     private Integer prioridade;
     private Boolean status;
-    private LocalDate prazo;
+    private String prazo;
 
-    public Card(String nome, String descricao, Integer prioridade, Boolean status, LocalDate prazo) {
+    public Card(String nome, String descricao, Integer prioridade, Boolean status, String prazo) {
         this.nome = nome;
         this.descricao = descricao;
         this.prioridade = prioridade;
@@ -52,13 +52,15 @@ public class Card {
     /*
     Listagem de Cards
      */
+
     @Override
     public String toString() {
         return "Card{" +
                 "nome='" + nome + '\'' +
                 ", descricao='" + descricao + '\'' +
-                ", prioridade='" + prioridade + '\'' +
+                ", prioridade=" + prioridade +
                 ", status=" + status +
+                ", prazo=" + prazo +
                 '}';
     }
 }
