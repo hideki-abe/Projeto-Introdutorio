@@ -23,12 +23,14 @@ public class Main {
             System.out.println("Criando Card");
             System.out.print("Título da tarefa: ");
             String titulo = sc.nextLine();
+            System.out.print("Categoria: ");
+            String categoria = sc.nextLine();
             System.out.print("Descrição: ");
             String descricao = sc.nextLine();
             System.out.print("Prioridade(de 1 a 5): ");
             int prioridade = sc.nextInt();
 
-            Card card = new Card(titulo, descricao, prioridade, false, null);
+            Card card = new Card(titulo, categoria, descricao, prioridade, false, null);
             lista.getLista().add(card);
 
             System.out.println("Deseja criar outra tarefa? Para cancelar digite 0");
@@ -48,12 +50,12 @@ public class Main {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
 
-        Card card1 = new Card("Tarefa 1", "descricao", 1, false, data.format(formatter));
-        Card card2 = new Card("Tarefa 2", "descricao", 1, false, data.format(formatter));
-        Card card3 = new Card("Tarefa 3", "descricao", 1, false, data.format(formatter));
-        Card card4 = new Card("Tarefa 4", "descricao", 1, false, data.format(formatter));
-        Card card5 = new Card("Tarefa 5", "descricao", 1, false, data.format(formatter));
-        Card card6 = new Card("Tarefa 6", "descricao", 1, false, data.format(formatter));
+        Card card1 = new Card("Tarefa 1","categoria", "descricao", 1, false, data.format(formatter));
+        Card card2 = new Card("Tarefa 2","categoria", "descricao", 1, false, data.format(formatter));
+        Card card3 = new Card("Tarefa 3", "categoria","descricao", 1, false, data.format(formatter));
+        Card card4 = new Card("Tarefa 4", "categoria","descricao", 1, false, data.format(formatter));
+        Card card5 = new Card("Tarefa 5", "categoria","descricao", 1, false, data.format(formatter));
+        Card card6 = new Card("Tarefa 6","categoria","descricao", 1, false, data.format(formatter));
 
         lista.getLista().add(card1);
         lista.getLista().add(card2);
