@@ -9,7 +9,7 @@ public class Main {
 
         ListaDeCards lista = new ListaDeCards();
 
-        //cadastroDeCard(lista, sc);
+        cadastroDeCard(lista, sc);
         popularCards(lista);
         listagemDeCards(lista);
 
