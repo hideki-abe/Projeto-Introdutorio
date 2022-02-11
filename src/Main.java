@@ -11,10 +11,6 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        File file = new File("file.txt");
-
-
-
         ListaDeCards lista = new ListaDeCards();
 
         cadastroDeCard(lista, sc);
