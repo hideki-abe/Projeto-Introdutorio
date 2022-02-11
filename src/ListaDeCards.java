@@ -1,22 +1,17 @@
 import java.util.HashSet;
+import java.util.LinkedHashSet;
 
 public class ListaDeCards {
 
-    private HashSet<Card> lista = new HashSet<>();
+    private final LinkedHashSet<Card> lista = new LinkedHashSet<>();
 
 
     public ListaDeCards(){}
-    public ListaDeCards(HashSet<Card> lista) {
-        this.lista = lista;
-    }
 
     public HashSet<Card> getLista() {
         return lista;
     }
 
-    public void setLista(HashSet<Card> lista) {
-        this.lista = lista;
-    }
 
 
 }

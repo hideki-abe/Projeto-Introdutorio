@@ -13,7 +13,27 @@ public class Main {
         popularCards(lista);
         listagemDeCards(lista);
 
+        System.out.println("Digite o titulo de um card para ser apagado: ");
+        String titulo = sc.nextLine();
+        Card encontrado = encontraPorTitulo(titulo, lista);
+        deletarCard(encontrado, lista);
+
+        listagemDeCards(lista);
+
         sc.close();
+    }
+
+    public static Card encontraPorTitulo(String titulo, ListaDeCards lista){
+        for (Card card: lista.getLista()) {
+            if(card.getNome().equals(titulo)){
+                return card;
+            }
+        }
+        return null;
+    }
+
+    public static void deletarCard(Card encontrado, ListaDeCards lista){
+        lista.getLista().remove(encontrado);
     }
 
     public static void cadastroDeCard(ListaDeCards lista, Scanner sc){
