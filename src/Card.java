@@ -2,14 +2,18 @@ import java.time.LocalDate;
 
 public class Card {
 
-    private String nome;
+    private String titulo;
     private String descricao;
     private Integer prioridade;
+    //O status false significa que a atividade não foi concluída
     private Boolean status;
-    private LocalDate prazo;
+    private String prazo;
+    private String categoria;
 
-    public Card(String nome, String descricao, Integer prioridade, Boolean status, LocalDate prazo) {
-        this.nome = nome;
+
+    public Card(String titulo, String categoria, String descricao, Integer prioridade, Boolean status, String prazo) {
+        this.titulo = titulo;
+        this.categoria = categoria;
         this.descricao = descricao;
         this.prioridade = prioridade;
         this.status = status;
@@ -17,11 +21,11 @@ public class Card {
     }
 
     public String getNome() {
-        return nome;
+        return titulo;
     }
 
     public void setNome(String nome) {
-        this.nome = nome;
+        this.titulo = nome;
     }
 
     public String getDescricao() {
@@ -31,8 +35,7 @@ public class Card {
     public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
-
-
+    
     public Integer getPrioridade() {
         return prioridade;
     }
@@ -52,13 +55,16 @@ public class Card {
     /*
     Listagem de Cards
      */
+
     @Override
     public String toString() {
         return "Card{" +
-                "nome='" + nome + '\'' +
+                "nome='" + titulo + '\'' +
                 ", descricao='" + descricao + '\'' +
-                ", prioridade='" + prioridade + '\'' +
+                ", categoria='" + categoria +
+                ", prioridade=" + prioridade +
                 ", status=" + status +
+                ", prazo='" + prazo + '\'' +
                 '}';
     }
 }
