@@ -1,3 +1,5 @@
+package main.java.cards;
+
 import java.time.LocalDate;
 
 public class Card {
@@ -58,7 +60,7 @@ public class Card {
 
     @Override
     public String toString() {
-        return "Card{" +
+        return "main.java.cards.Card{" +
                 "nome='" + titulo + '\'' +
                 ", descricao='" + descricao + '\'' +
                 ", categoria='" + categoria +

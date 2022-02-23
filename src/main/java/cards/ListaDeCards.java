@@ -1,50 +1,28 @@
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+package main.java.cards;
+
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.Scanner;
 
-public class Main {
+public class ListaDeCards {
 
-    public static void main(String[] args) {
+    private static final LinkedHashSet<Card> lista = new LinkedHashSet<>();
+
+
+    public ListaDeCards(){}
+
+    public HashSet<Card> getLista() {
+        return lista;
+    }
+
+    public void cadastroDeCard(){
         Scanner sc = new Scanner(System.in);
-
-        ListaDeCards lista = new ListaDeCards();
-
-        cadastroDeCard(lista, sc);
-        popularCards(lista);
-        listagemDeCards(lista);
-
-        System.out.println("Digite o titulo de um card para ser apagado: ");
-        String titulo = sc.nextLine();
-        Card encontrado = encontraPorTitulo(titulo, lista);
-        deletarCard(encontrado, lista);
-
-        listagemDeCards(lista);
-
-        sc.close();
-    }
-
-    public static Card encontraPorTitulo(String titulo, ListaDeCards lista){
-        for (Card card: lista.getLista()) {
-            if(card.getNome().equals(titulo)){
-                return card;
-            }
-        }
-        return null;
-    }
-
-    public static void deletarCard(Card encontrado, ListaDeCards lista){
-        lista.getLista().remove(encontrado);
-    }
-
-    public static void cadastroDeCard(ListaDeCards lista, Scanner sc){
         int caso = 1;
         while(caso!=0){
 
-            System.out.println("Criando Card");
+            System.out.println("Criando nova tarefa");
             System.out.print("Título da tarefa: ");
             String titulo = sc.nextLine();
             System.out.print("Categoria: ");
@@ -55,7 +33,7 @@ public class Main {
             int prioridade = sc.nextInt();
 
             Card card = new Card(titulo, categoria, descricao, prioridade, false, null);
-            lista.getLista().add(card);
+            lista.add(card);
 
             System.out.println("Deseja criar outra tarefa? Para cancelar digite 0");
             caso = sc.nextInt();
@@ -63,13 +41,26 @@ public class Main {
         }
     }
 
-    public static void listagemDeCards(ListaDeCards lista){
+    public Card encontraPorTitulo(String titulo, ListaDeCards lista){
+        for (Card card: lista.getLista()) {
+            if(card.getNome().equals(titulo)){
+                return card;
+            }
+        }
+        return null;
+    }
+
+    public void deletarCard(Card encontrado, ListaDeCards lista){
+        lista.getLista().remove(encontrado);
+    }
+
+    public void listagemDeCards(ListaDeCards lista){
         for (Card card: lista.getLista()) {
             System.out.println(card.toString());
         }
     }
 
-    public static void popularCards(ListaDeCards lista){
+    public void popularCards(ListaDeCards lista){
         LocalDate data = LocalDate.now();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
@@ -89,6 +80,5 @@ public class Main {
         lista.getLista().add(card6);
 
     }
-
 
 }
