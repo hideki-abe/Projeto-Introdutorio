@@ -4,7 +4,6 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
-import java.util.Scanner;
 
 public class ListaDeCards {
 
@@ -16,29 +15,9 @@ public class ListaDeCards {
         return lista;
     }
 
-    //função para cadastrar novas tarefas(cards) pelo System.in
-    public void cadastroDeCard(){
-        Scanner sc = new Scanner(System.in);
-        int caso = 1;
-        while(caso!=0){
-
-            System.out.println("Criando nova tarefa");
-            System.out.print("Título da tarefa: ");
-            String titulo = sc.nextLine();
-            System.out.print("Categoria: ");
-            String categoria = sc.nextLine();
-            System.out.print("Descrição: ");
-            String descricao = sc.nextLine();
-            System.out.print("Prioridade(de 1 a 5): ");
-            int prioridade = sc.nextInt();
-
-            Card card = new Card(titulo, categoria, descricao, prioridade, false, null);
-            lista.add(card);
-
-            System.out.println("Deseja criar outra tarefa? Para cancelar digite 0");
-            caso = sc.nextInt();
-            sc.nextLine();
-        }
+    //função para cadastrar novas tarefas(cards)
+    public void cadastroDeCard(Card card){
+        lista.add(card);
     }
 
     //função de auxílio para deletarCard que encontra um card pelo título
@@ -52,7 +31,7 @@ public class ListaDeCards {
     }
 
     //função para deletar um card já conhecido pelo nome
-    public void deletarCard(Card encontrado, ListaDeCards lista){
+    public void deletaCard(Card encontrado, ListaDeCards lista){
         lista.getLista().remove(encontrado);
     }
 
