@@ -1,7 +1,7 @@
-package main.java.main;
+package main;
 
-import main.java.cards.Card;
-import main.java.cards.ListaDeCards;
+import cards.Card;
+import cards.ListaDeCards;
 import java.util.Scanner;
 
 /*

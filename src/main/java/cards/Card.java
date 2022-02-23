@@ -1,4 +1,4 @@
-package main.java.cards;
+package cards;
 
 import java.time.LocalDate;
 
