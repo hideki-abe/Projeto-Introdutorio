@@ -57,7 +57,6 @@ public class Card {
     /*
     Listagem de Cards
      */
-
     @Override
     public String toString() {
         return "main.java.cards.Card{" +

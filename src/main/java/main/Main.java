@@ -2,14 +2,11 @@ package main.java.main;
 
 import main.java.cards.Card;
 import main.java.cards.ListaDeCards;
-
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
+
+/*
+@Author Lucas Hideki Abe
+ */
 
 public class Main {
 

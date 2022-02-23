@@ -10,13 +10,13 @@ public class ListaDeCards {
 
     private static final LinkedHashSet<Card> lista = new LinkedHashSet<>();
 
-
     public ListaDeCards(){}
 
     public HashSet<Card> getLista() {
         return lista;
     }
 
+    //função para cadastrar novas tarefas(cards) pelo System.in
     public void cadastroDeCard(){
         Scanner sc = new Scanner(System.in);
         int caso = 1;
@@ -41,6 +41,7 @@ public class ListaDeCards {
         }
     }
 
+    //função de auxílio para deletarCard que encontra um card pelo título
     public Card encontraPorTitulo(String titulo, ListaDeCards lista){
         for (Card card: lista.getLista()) {
             if(card.getNome().equals(titulo)){
@@ -50,16 +51,19 @@ public class ListaDeCards {
         return null;
     }
 
+    //função para deletar um card já conhecido pelo nome
     public void deletarCard(Card encontrado, ListaDeCards lista){
         lista.getLista().remove(encontrado);
     }
 
+    //função que lista todos os cards seguindo o método de ordenação do LinkedList
     public void listagemDeCards(ListaDeCards lista){
         for (Card card: lista.getLista()) {
             System.out.println(card.toString());
         }
     }
 
+    //função que popula cards, simulando um banco de dados
     public void popularCards(ListaDeCards lista){
         LocalDate data = LocalDate.now();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
