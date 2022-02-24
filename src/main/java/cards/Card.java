@@ -12,6 +12,9 @@ public class Card {
     private String prazo;
     private String categoria;
 
+    public Card(){
+
+    }
 
     public Card(String titulo, String categoria, String descricao, Integer prioridade, Boolean status, String prazo) {
         this.titulo = titulo;
@@ -54,9 +57,17 @@ public class Card {
         this.status = status;
     }
 
+    public void setPrazo(String prazo) {
+        this.prazo = prazo;
+    }
+
+    public String getPrazo() {
+        return prazo;
+    }
+
     /*
-    Listagem de Cards
-     */
+      Listagem de Cards
+    */
     @Override
     public String toString() {
         return "main.java.cards.Card{" +

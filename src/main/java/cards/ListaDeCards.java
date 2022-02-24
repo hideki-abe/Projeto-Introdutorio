@@ -21,29 +21,40 @@ public class ListaDeCards {
     }
 
     //função de auxílio para deletarCard que encontra um card pelo título
-    public Card encontraPorTitulo(String titulo, ListaDeCards lista){
-        for (Card card: lista.getLista()) {
+    public Card encontraPorTitulo(String titulo){
+        for (Card card: lista) {
             if(card.getNome().equals(titulo)){
                 return card;
             }
         }
+        System.out.println("Card não encontrado!");
         return null;
     }
 
     //função para deletar um card já conhecido pelo nome
-    public void deletaCard(Card encontrado, ListaDeCards lista){
-        lista.getLista().remove(encontrado);
+    public void deletaCard(Card encontrado){
+        lista.remove(encontrado);
     }
 
     //função que lista todos os cards seguindo o método de ordenação do LinkedList
-    public void listagemDeCards(ListaDeCards lista){
-        for (Card card: lista.getLista()) {
+    public void listagemDeCards(){
+        for (Card card: lista) {
             System.out.println(card.toString());
         }
     }
 
+    //função que atualiza o card encontrado por um titulo
+    public void atualizaCard(String titulo, Card cardAtualizado){
+        this.encontraPorTitulo(titulo).setNome(cardAtualizado.getNome());
+        this.encontraPorTitulo(titulo).setDescricao(cardAtualizado.getDescricao());
+        this.encontraPorTitulo(titulo).setPrazo(cardAtualizado.getPrazo());
+        this.encontraPorTitulo(titulo).setPrioridade(cardAtualizado.getPrioridade());
+        this.encontraPorTitulo(titulo).setStatus(cardAtualizado.getStatus());
+
+    }
+
     //função que popula cards, simulando um banco de dados
-    public void popularCards(ListaDeCards lista){
+    public void popularCards(){
         LocalDate data = LocalDate.now();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
@@ -55,12 +66,12 @@ public class ListaDeCards {
         Card card5 = new Card("Tarefa 5", "categoria","descricao", 1, false, data.format(formatter));
         Card card6 = new Card("Tarefa 6","categoria","descricao", 1, false, data.format(formatter));
 
-        lista.getLista().add(card1);
-        lista.getLista().add(card2);
-        lista.getLista().add(card3);
-        lista.getLista().add(card4);
-        lista.getLista().add(card5);
-        lista.getLista().add(card6);
+        lista.add(card1);
+        lista.add(card2);
+        lista.add(card3);
+        lista.add(card4);
+        lista.add(card5);
+        lista.add(card6);
 
     }
 

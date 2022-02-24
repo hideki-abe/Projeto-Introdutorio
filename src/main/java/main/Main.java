@@ -14,6 +14,8 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         ListaDeCards lista = new ListaDeCards();
 
+        /*
+        //loop de cadastro
         int x = 1;
         while(x != 0){
             cadastro(lista, sc);
@@ -22,15 +24,17 @@ public class Main {
             sc.nextLine();
         }
 
-        lista.popularCards(lista);
-        lista.listagemDeCards(lista);
+         */
+
+        lista.popularCards();
+        lista.listagemDeCards();
 
         System.out.println("Digite o titulo de um card para ser apagado: ");
         String cardASerApagado = sc.nextLine();
-        Card encontrado = lista.encontraPorTitulo(cardASerApagado, lista);
-        lista.deletaCard(encontrado, lista);
+        Card encontrado = lista.encontraPorTitulo(cardASerApagado);
+        lista.deletaCard(encontrado);
 
-        lista.listagemDeCards(lista);
+        lista.listagemDeCards();
 
         sc.close();
     }
