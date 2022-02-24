@@ -27,12 +27,13 @@ public class ListaDeCards {
                 return card;
             }
         }
-        System.out.println("Card não encontrado!");
+
         return null;
     }
 
     //função para deletar um card já conhecido pelo nome
-    public void deletaCard(Card encontrado){
+    public void deletaCard(String titulo){
+        Card encontrado = encontraPorTitulo(titulo);
         lista.remove(encontrado);
     }
 
@@ -45,11 +46,12 @@ public class ListaDeCards {
 
     //função que atualiza o card encontrado por um titulo
     public void atualizaCard(String titulo, Card cardAtualizado){
-        this.encontraPorTitulo(titulo).setNome(cardAtualizado.getNome());
         this.encontraPorTitulo(titulo).setDescricao(cardAtualizado.getDescricao());
         this.encontraPorTitulo(titulo).setPrazo(cardAtualizado.getPrazo());
         this.encontraPorTitulo(titulo).setPrioridade(cardAtualizado.getPrioridade());
         this.encontraPorTitulo(titulo).setStatus(cardAtualizado.getStatus());
+        this.encontraPorTitulo(titulo).setCategoria(cardAtualizado.getCategoria());
+        this.encontraPorTitulo(titulo).setNome(cardAtualizado.getNome());
 
     }
 

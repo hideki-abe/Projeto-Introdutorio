@@ -32,7 +32,7 @@ public class Main {
         System.out.println("Digite o titulo de um card para ser apagado: ");
         String cardASerApagado = sc.nextLine();
         Card encontrado = lista.encontraPorTitulo(cardASerApagado);
-        lista.deletaCard(encontrado);
+        lista.deletaCard("Tarefa 1");
 
         lista.listagemDeCards();
 

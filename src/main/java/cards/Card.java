@@ -65,9 +65,17 @@ public class Card {
         return prazo;
     }
 
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
+    }
+
+    public String getCategoria() {
+        return categoria;
+    }
+
     /*
-      Listagem de Cards
-    */
+              Listagem de Cards
+            */
     @Override
     public String toString() {
         return "main.java.cards.Card{" +

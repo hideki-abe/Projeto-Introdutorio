@@ -12,29 +12,33 @@ import java.util.LinkedHashSet;
 
 public class ListaDeCardsTest {
 
-    private static final LinkedHashSet<Card> listaTeste = new LinkedHashSet<>();
-
-    public ListaDeCardsTest(){
-        ListaDeCards lista = new ListaDeCards();
-        lista.popularCards();
-        listaTeste.addAll(lista.getLista());
-    }
-
-
-
     @Test
     public void testCadastroDeCard(){
+        ListaDeCards lista = new ListaDeCards();
+        Card cardNovo = new Card("Cadastro de Card", null, null,
+                null, null, null);
+        lista.cadastroDeCard(cardNovo);
+
+        Assert.assertEquals(lista.encontraPorTitulo("Cadastro de Card"), cardNovo);
 
     }
 
-    @Ignore
+    @Test
     public void testEncontraPorTitulo(){
+        ListaDeCards lista = new ListaDeCards();
+        Card cardNovo = new Card("Tarefa Encontrada", null, null,
+                null, null, null);
+        lista.getLista().add(cardNovo);
+        Assert.assertEquals(lista.encontraPorTitulo("Tarefa Encontrada"), cardNovo);
 
     }
 
-    @Ignore
+    @Test
     public void testDeletaCard(){
+        ListaDeCards lista = new ListaDeCards();
+        lista.deletaCard("Tarefa 2");
 
+        Assert.assertNull(lista.encontraPorTitulo("Tarefa 2"));
     }
 
     /*
@@ -43,16 +47,14 @@ public class ListaDeCardsTest {
     @Test
     public void testAtualizaCard(){
         ListaDeCards lista = new ListaDeCards();
+        lista.popularCards();
 
         Card cardAtualizado = new Card("novo titulo", "Categoria nova", "Descrição nova",
-                5, false, null);
+                5, false, "02/02/2022");
 
-        Card cardAntigo = lista.encontraPorTitulo("Tarefa 1");
-        lista.encontraPorTitulo("Tarefa 1").setNome(cardAtualizado.getNome());
+        lista.atualizaCard("Tarefa 1", cardAtualizado);
 
-
-        Assert.assertEquals(cardAtualizado.getNome(), cardAntigo.getNome());
-        //lista.listagemDeCards();
+        Assert.assertEquals(cardAtualizado.getNome(), lista.encontraPorTitulo("novo titulo").getNome());
     }
 
 }
