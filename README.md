@@ -21,4 +21,4 @@ A aplicação se resume à um programa que liste tarefas em cartões(cards), com
 
 
 <h3>Executando o projeto: </h3>
-  Para executar o projeto, é necessário utilizar a IDE Intellijj para maior compatibilidade. Ao se abrir o projeto, é possível rodar o painel principal "Main" na própria IDE, ou também os testes unitários(ListaDeCardsTest) dando *run* na classe.
+  Para executar o projeto, é necessário utilizar a IDE Intellijj para maior compatibilidade. Ao se abrir o projeto, é possível rodar o painel principal "Main" na própria IDE, ou também os testes unitários(ListaDeCardsTest) dando <b>run</b> na classe.
