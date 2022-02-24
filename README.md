@@ -16,3 +16,9 @@ A aplicação se resume à um programa que liste tarefas em cartões(cards), com
 <h3>2) Segunda parte do projeto(K1-T4: Testes Unitários)</h3>
 
   Nessa etapa, terão de ser implementados testes unitários para o CRUD. Para a funcionalidade de atualizar a tarefa, foi realizado o TDD.
+
+
+
+
+<h3>Executando o projeto: </h3>
+  Para executar o projeto, é necessário utilizar a IDE Intellijj para maior compatibilidade. Ao se abrir o projeto, é possível rodar o painel principal "Main" na própria IDE, ou também os testes unitários(ListaDeCardsTest) dando *run* na classe.
