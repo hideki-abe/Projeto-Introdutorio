@@ -2,16 +2,16 @@ package cards;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.HashSet;
-import java.util.LinkedHashSet;
+import java.util.*;
 
 public class ListaDeCards {
 
-    private static final LinkedHashSet<Card> lista = new LinkedHashSet<>();
+    private static final List<Card> lista = new ArrayList<>();
+
 
     public ListaDeCards(){}
 
-    public HashSet<Card> getLista() {
+    public List<Card> getLista() {
         return lista;
     }
 
@@ -45,7 +45,7 @@ public class ListaDeCards {
     }
 
     //função que atualiza o card encontrado por um titulo
-    public void atualizaCard(String titulo, Card cardAtualizado){
+    public void atualizaCard(String titulo, Card cardAtualizado) throws Exception {
         this.encontraPorTitulo(titulo).setDescricao(cardAtualizado.getDescricao());
         this.encontraPorTitulo(titulo).setPrazo(cardAtualizado.getPrazo());
         this.encontraPorTitulo(titulo).setPrioridade(cardAtualizado.getPrioridade());
@@ -61,12 +61,12 @@ public class ListaDeCards {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
 
-        Card card1 = new Card("Tarefa 1","categoria", "descricao", 1, false, data.format(formatter));
-        Card card2 = new Card("Tarefa 2","categoria", "descricao", 1, false, data.format(formatter));
-        Card card3 = new Card("Tarefa 3", "categoria","descricao", 1, false, data.format(formatter));
-        Card card4 = new Card("Tarefa 4", "categoria","descricao", 1, false, data.format(formatter));
-        Card card5 = new Card("Tarefa 5", "categoria","descricao", 1, false, data.format(formatter));
-        Card card6 = new Card("Tarefa 6","categoria","descricao", 1, false, data.format(formatter));
+        Card card1 = new Card("Tarefa 1","categoria", "descricao", 5, false, data.format(formatter));
+        Card card2 = new Card("Tarefa 2","categoria", "descricao", 2, false, data.format(formatter));
+        Card card3 = new Card("Tarefa 3", "categoria","descricao", 3, false, data.format(formatter));
+        Card card4 = new Card("Tarefa 4", "categoria","descricao", 4, false, data.format(formatter));
+        Card card5 = new Card("Tarefa 5", "categoria","descricao", 3, false, data.format(formatter));
+        Card card6 = new Card("Tarefa 6","categoria","descricao", 3, false, data.format(formatter));
 
         lista.add(card1);
         lista.add(card2);
@@ -75,6 +75,11 @@ public class ListaDeCards {
         lista.add(card5);
         lista.add(card6);
 
+    }
+
+    //ordenação da lista utilizando o metodo compareTo e as Collections
+    public void ordenaPorPrioridade(){
+        Collections.sort(lista);
     }
 
 }

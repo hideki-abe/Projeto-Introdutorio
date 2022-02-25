@@ -60,7 +60,7 @@ public class ListaDeCardsTest {
     Aplicando o TDD nesse método
      */
     @Test
-    public void testAtualizaCard(){
+    public void testAtualizaCard() throws Exception {
         System.out.println("Atualizando ");
         ListaDeCards lista = new ListaDeCards();
         lista.popularCards();
