@@ -14,7 +14,7 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         ListaDeCards lista = new ListaDeCards();
 
-        /*
+
         //loop de cadastro - corrigido o bug para quando se inserir uma String não travar
         loop:
         for(;;) {
@@ -29,7 +29,7 @@ public class Main {
         }
         System.out.println("Cadastro encerrado!");
 
-        */
+        
 
         lista.popularCards();
         lista.ordenaPorPrioridade();
