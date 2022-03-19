@@ -29,7 +29,7 @@ public class Main {
         }
         System.out.println("Cadastro encerrado!");
 
-        
+
 
         lista.popularCards();
         lista.ordenaPorPrioridade();
