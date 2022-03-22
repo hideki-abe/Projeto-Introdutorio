@@ -1,4 +1,4 @@
-body{
+body, html{
     margin-bottom: 0;
     display: inline-block;
     background: rgb(255, 255, 255);
@@ -112,16 +112,17 @@ body{
     
 }
 
-.cards{
+#cards{
     width: fit-content;
 }
 
 .card_cadastrado{
     display: inline-block;
-    background-color: #ffa646;
+    background-color: #f2f8be;
     margin: 2em 2em 2em 2em;
     width: 300px;
-    border: 1px solid #ffa646;
+    height: 240px;
+    border: 1px solid #f2f8be;
     border-radius: 5px;
     box-shadow: 5px 5px 5px rgb(158, 157, 157);
     box-sizing: border-box;
@@ -181,6 +182,14 @@ body{
     position: relative;
     width: 1em;
     left: 80%;
+}
+
+#icon_alfinete{
+    position: relative;
+    width: 2em;
+    bottom: 13em;
+    left: 4em;
+
 }
 
 #icon_lixo:hover{
