@@ -17,7 +17,9 @@ A aplicação se resume à um programa que liste tarefas em cartões(cards), com
 
   Nessa etapa, terão de ser implementados testes unitários para o CRUD. Para a funcionalidade de atualizar a tarefa, foi realizado o TDD.
 
+<h3>2) Terceira parte do projeto(K1-T5: Javascript/Typescript)</h3>
 
+  2.1. Na etapa de Javascript, o Frontend da aplicação deve ser aplicado sem a integração. Todo o código do Frontend está na pasta "Fronted", e para executar essa parte, é necessário ter a extensão Live Server do Javascript ou outra ferramenta similar.
 
 
 <h3>Executando o projeto: </h3>
