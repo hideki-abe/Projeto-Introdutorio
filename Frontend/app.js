@@ -37,11 +37,25 @@ function deletaCard(index, novoCard){
 
 }
 
+//Para editar um card, clique no ícone de edição e depois edite o que quiser. Após, aperte enter para 
+//confirmar as edições.
 function editaCard(index, novoCard){
     console.log("Editei o card: " + index);
-    const children = novoCard.children;
+    const children = novoCard.childNodes;
+    
+    children.forEach(element => {
+        element.setAttribute("contenteditable", true);
+    });
 
+    window.addEventListener("keypress", (e) => {
+        if(e.key === "Enter"){
+            children.forEach(element => {
+                element.setAttribute("contenteditable", false);
+            })
 
+        }
+    });
+    
 
 }
 
@@ -117,12 +131,3 @@ function criaCard(){
     cards.appendChild(novoCard);
 
 }
-
-
-
-window.addEventListener("keypress", (e) => {
-    if(e.key === "Enter"){
-        criaCard();
-        console.log("Cadastro de card realizado com sucesso!")
-    }
-});
