@@ -144,7 +144,9 @@ body, html{
     text-decoration: underline;
     position: relative;
     text-align: center;
+    width: 300px;
     bottom: 1em;
+    right: 2em;
 }
 
 #categoria_cadastrada{
