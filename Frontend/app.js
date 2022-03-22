@@ -14,10 +14,11 @@ const lista = new ListaDeCards();
 
 console.log(lista.cards);
 
-botaoCadastra.addEventListener('click', function(){
+botaoCadastra.addEventListener('click', function(event){
 
-    criaCard()
-    
+    event.preventDefault();
+    criaCard();
+
 });
 
 function cadastraCard(){
@@ -25,22 +26,41 @@ function cadastraCard(){
     const card = new Card(titulo.value, categoria.value, descricao.value, data.value, prioridade.value, false);
 
     lista.adicionaCard(card);
+    return(lista.cards.length);
 
 }
 
-function deletaCard(){
-    console.log("Deletei o card");
+function deletaCard(index, novoCard){
+    lista.removeCard(lista.cards[index]);
+    cards.removeChild(novoCard);
+    console.log("Deletei o card: " + index);
+
+}
+
+function editaCard(index, novoCard){
+    console.log("Editei o card: " + index);
+    const children = novoCard.children;
+
+
 
 }
 
 
 function criaCard(){
 
+    const index = cadastraCard();
+
+    //Não permite mais que 9 cards
+    if(index > 9){
+        return;
+    }
+
     const novoCard = document.createElement("div");
     novoCard.setAttribute("class", "card_cadastrado");
 
     const data = document.createElement("div");
     data.setAttribute("id", "data_cadastrada");
+    //data.setAttribute("contenteditable", true);
     data.textContent = prazo.value;
     novoCard.appendChild(data);
 
@@ -68,19 +88,24 @@ function criaCard(){
 
     const novoStatus = document.createElement("div");
     novoStatus.setAttribute("id", "status_cadastrado");
-    novoStatus.textContent = "Status: A fazer";
+    novoStatus.textContent = "Status: ";
+    const checkbox = document.createElement("input");
+    checkbox.type = "checkbox";
+    checkbox.setAttribute("class", "checkbox");
+    novoStatus.appendChild(checkbox);
     novoCard.appendChild(novoStatus);
     
 
     let lixo = document.createElement("img");
     lixo.src = "./imagens/lixo.png";
     lixo.setAttribute("id", "icon_lixo");
-    lixo.addEventListener("click", () => deletaCard())
+    lixo.addEventListener("click", () => deletaCard(index, novoCard))
     novoCard.appendChild(lixo);
 
     let editor = document.createElement("img");
     editor.src = "./imagens/editar.png";
     editor.setAttribute("id", "icon_editar");
+    editor.addEventListener("click", () => editaCard(index, novoCard));
     novoCard.appendChild(editor);
 
 
@@ -90,8 +115,6 @@ function criaCard(){
     novoCard.appendChild(alfinete);
 
     cards.appendChild(novoCard);
-
-    cadastraCard();
 
 }
 
