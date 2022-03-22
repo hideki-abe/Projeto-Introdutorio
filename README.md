@@ -19,7 +19,7 @@ A aplicação se resume à um programa que liste tarefas em cartões(cards), com
 
 <h3>3) Terceira parte do projeto(K1-T5: Javascript/Typescript)</h3>
 
-  2.1. Na etapa de Javascript, o Frontend da aplicação deve ser aplicado sem a integração. Todo o código do Frontend está na pasta "Fronted", e para executar essa parte, é necessário ter a extensão Live Server do Javascript ou outra ferramenta similar.
+  - Na etapa de Javascript, o Frontend da aplicação deve ser aplicado sem a integração. Todo o código do Frontend está na pasta "Fronted", e para executar essa parte, é necessário ter a extensão Live Server do Javascript ou outra ferramenta similar.
 
 
 <h3>Executando o projeto: </h3>
