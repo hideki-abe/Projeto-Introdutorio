@@ -2,6 +2,8 @@
 
 <h1 >Projeto introdutório do Programa de Aceleração da ZG Solutions de Java.</h1>
 
+Lucas Hideki Abe
+
 <h3>1) Primeira parte do projeto(K1-T3: Java/Groovy)</h3> 
 
 Projeto introdutório do Programa de Aceleração da ZG Solutions de Java.
