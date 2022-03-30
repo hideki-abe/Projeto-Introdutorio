@@ -21,8 +21,8 @@ A aplicação se resume à um programa que liste tarefas em cartões(cards), com
 
 <h3>3) Terceira parte do projeto(K1-T5: Javascript/Typescript)</h3>
 
-  - Na etapa de Javascript, o Frontend da aplicação deve ser aplicado sem a integração. Todo o código do Frontend está na pasta "Fronted", e para executar essa parte, é necessário ter a extensão Live Server do Javascript ou outra ferramenta similar.
-
+  - Na etapa de Javascript, o Frontend da aplicação deve ser aplicado sem a integração. Todo o código do Frontend está na pasta "Frontend", e para executar essa parte, é necessário ter a extensão Live Server do Javascript ou outra ferramenta similar.
+  
 
 <h3>Executando o projeto: </h3>
   Para executar o projeto, é necessário utilizar a IDE Intellijj para maior compatibilidade. Ao se abrir o projeto, é possível rodar o painel principal "Main" na própria IDE, ou também os testes unitários(ListaDeCardsTest) dando <b>run</b> na classe.
