@@ -155,7 +155,7 @@ body, html{
 }
 
 #descricao_cadastrada{
-    width: 15em;
+    width: 13em;
     height: 3em;
     margin-bottom: 1em;
     white-space: normal;
@@ -197,6 +197,7 @@ body, html{
 
 #icon_alfinete{
     position: relative;
+    line-height: none;
     width: 2em;
     bottom: 13em;
     left: 4em;

@@ -45,6 +45,7 @@ function editaCard(index, novoCard){
     
     children.forEach(element => {
         element.setAttribute("contenteditable", true);
+    
     });
 
     window.addEventListener("keypress", (e) => {
