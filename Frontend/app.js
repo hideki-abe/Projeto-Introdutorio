@@ -71,7 +71,7 @@ function validaPrioridade(){
             return false;
         }
     } else{
-        alert("Data inválida!");
+        alert("Prioridade inválida!");
     }
 
     
