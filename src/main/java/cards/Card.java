@@ -41,7 +41,7 @@ public class Card implements Comparable {
     public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
-    
+
     public Integer getPrioridade() {
         return prioridade;
     }

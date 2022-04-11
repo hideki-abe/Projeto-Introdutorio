@@ -47,26 +47,24 @@ public class Main {
 
     public static void cadastro(ListaDeCards lista, Scanner sc){
 
-            System.out.println("Criando nova tarefa");
-            System.out.print("Título da tarefa: ");
-            String titulo = sc.nextLine();
-            System.out.print("Categoria: ");
-            String categoria = sc.nextLine();
-            System.out.print("Descrição: ");
-            String descricao = sc.nextLine();
-            System.out.print("Prioridade(de 1 a 5): ");
-            int prioridade = sc.nextInt();
-            while(prioridade > 5 || prioridade < 0){
-                System.out.println("Valor inválido para prioridade! Dê outro valor!");
-                prioridade = sc.nextInt();
-            }
-
-            sc.nextLine();
-
-            Card card = new Card(titulo, categoria, descricao, prioridade, false, null);
-            lista.cadastroDeCard(card);
-
+        System.out.println("Criando nova tarefa");
+        System.out.print("Título da tarefa: ");
+        String titulo = sc.nextLine();
+        System.out.print("Categoria: ");
+        String categoria = sc.nextLine();
+        System.out.print("Descrição: ");
+        String descricao = sc.nextLine();
+        System.out.print("Prioridade(de 1 a 5): ");
+        int prioridade = sc.nextInt();
+        while(prioridade > 5 || prioridade < 0){
+            System.out.println("Valor inválido para prioridade! Dê outro valor!");
+            prioridade = sc.nextInt();
         }
+
+        sc.nextLine();
+
+        Card card = new Card(titulo, categoria, descricao, prioridade, false, null);
+        lista.cadastroDeCard(card);
+
     }
-
-
+}
